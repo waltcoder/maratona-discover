@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<title>dev.finance&dollar; | Maratona Discover</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta property="og:title" content="dev.finance&dollar; | Maratona Discover" />
+		<meta property="og:type" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+
+		<!-- <link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="icon.png" /> -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="./css/normalize.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- <link rel="manifest" href="site.webmanifest" /> -->
+		<meta name="theme-color" content="#fafafa" />
+	</head>
+
+	<body>
+		<header>
+			<img src="./assets/logo.svg" alt="logo dev.finance$" />
+		</header>
+		<main class="container">
+			<section id="balance">
+				<h2 class="sr-only">Balanço</h2>
+				<div class="card">
+					<h3>
+						<span>Entradas</span>
+						<img src="./assets/income.svg" alt="Income icon" />
+					</h3>
+					<p id="incomeDisplay">R$ 0,00</p>
+				</div>
+				<div class="card">
+					<h3>
+						<span>Saídas</span>
+						<img src="./assets/expense.svg" alt="Expense icon" />
+					</h3>
+					<p id="expenseDisplay">R$ 0,00</p>
+				</div>
+				<div class="card total">
+					<h3>
+						<span>Total</span>
+						<img src="./assets/total.svg" alt="Total icon" />
+					</h3>
+					<p id="totalDisplay">R$ 0,00</p>
+				</div>
+			</section>
+			<section id="transaction">
+				<h2 class="sr-only">Transações</h2>
+				<a href="#" id="OpenModalTransaction" class="button new newTransaction" onclick="Modal.open()">+ Nova Transação</a>
+				<table id="dataTable">
+					<thead>
+						<tr>
+							<th>Descrição</th>
+							<th>Valor</th>
+							<th>Data</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</section>
+		</main>
+		<div class="modalOverlay">
+			<div class="modal">
+				<div id="form">
+					<h2>Nova Transação</h2>
+					<form action="/" onsubmit="Form.submit(event)">
+						<div class="inputGroup">
+							<label class="sr-only" for="description">Descrição</label>
+							<input type="text" name="description" id="description" placeholder="Descrição" />
+						</div>
+						<div class="inputGroup">
+							<label class="sr-only" for="amount">Valor</label>
+							<input type="number" name="amount" id="amount" step="0.01" placeholder="0,00" inputmode="decimal" />
+							<small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+						</div>
+						<div class="inputGroup">
+							<label class="sr-only" for="date">Date</label>
+							<input type="date" name="date" id="date" />
+						</div>
+						<div class="inputGroup actions">
+							<a href="#" id="CloseModalTransaction" class="button cancel" onclick="Modal.close()">Cancelar</a>
+							<button>Salvar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer>waltcoder © 2022</footer>
+		<script src="./js/scripts.js"></script>
+	</body>
+</html>
